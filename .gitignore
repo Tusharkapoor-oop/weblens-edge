@@ -1,0 +1,105 @@
+# Environment and secrets (do NOT commit .env.example — it contains a real Tavily key)
+.env
+.env*
+.env.example
+.env.local
+.env.production
+*.pem
+*.key
+
+# Scratch and backup files
+*.bak
+cycle*_plan.md
+test_answers*.py
+test_chunks.py
+test_count8.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+.pytest_cache/
+pytest-of-*/
+.tox/
+htmlcov/
+
+# Build
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Bench output
+benchmarks/benchmark_results.json
+
+# MCP package
+*.tgz
+
+# Databases, caches and logs
+data-gym-cache/
+**/data-gym-cache/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+*.db-shm
+*.db-wal
+**/sandbox/temporary/
+**/sandbox/logs/
+*.log
+.webintel/
+.arena_budget_state.json
+.crawl4ai_profile/
+.aider*
+
+# Type/lint/test tooling caches
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.review-logs/
+.tmp-*/
+coverage.xml
+coverage.json
+.coverage.*
+*.junit.xml
+
+# Cloudflare / Node deployment surface
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+worker-configuration.d.ts
+
+# --- test/runtime temp artifacts -------------------------------------------
+# This sandbox denies writes to %TEMP%, so tempfile.gettempdir() falls back to
+# the current working directory and pytest/Playwright leave their scratch dirs
+# in the repo root. Ignore them so they never reach a commit.
+/tmp[a-z0-9_]*/
+/inline-snapshot-*/
+/.tmp/
+.tmp-*/
